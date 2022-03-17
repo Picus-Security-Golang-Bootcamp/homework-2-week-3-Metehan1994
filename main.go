@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -70,6 +71,9 @@ func main() {
 			}
 		}
 		search(nameOfBook, ListofBooks.AllBooks)
+	} else if len(os.Args) == 3 && os.Args[1] == "get" {
+		bookID, _ := strconv.Atoi(os.Args[2])
+		get(bookID, ListofBooks.AllBooks)
 	} else {
 		fmt.Println("You have written an invalid argument.")
 	}
@@ -114,5 +118,14 @@ func search(nameOfBook string, List []Book) {
 	}
 	if !bookFound {
 		fmt.Println("There is no such a book in the booklist.")
+	}
+}
+
+func get(bookID int, List []Book) {
+
+	for i := 0; i < len(List); i++ {
+		if bookID == List[i].ID {
+			fmt.Println(List[i].bookName)
+		}
 	}
 }
