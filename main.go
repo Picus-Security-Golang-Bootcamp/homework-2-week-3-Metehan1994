@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 type Writer struct {
 	writerID   int
@@ -41,8 +45,33 @@ func main() {
 		newBook = newBook.setAllProperties(ID, OneBookDetails)
 		ListofBooks.AllBooks = ListofBooks.AddBook(newBook)
 	}
-	for i := 0; i < len(ListofBooks.AllBooks); i++ {
-		fmt.Println(ListofBooks.AllBooks[i].bookName)
+
+	// wordPtr := flag.String("command", " ", "Listing all books")
+	// flag.Parse()
+
+	// if *wordPtr == "list" {
+	// 	for _, book := range ListofBooks.AllBooks {
+	// 		fmt.Println(book.bookName)
+	// 	}
+	// }
+
+	if len(os.Args) == 1 { //condition for running the program without any arguments
+		fmt.Println("You did not write any arguments to check the list of books.")
+	} else if os.Args[1] == "list" && len(os.Args) == 2 { //condition for list as an only argument
+		//Additional argument together with "list" will be not accepted
+		list(ListofBooks.AllBooks)
+	} else if len(os.Args) > 2 && os.Args[1] == "search" { //condition includes search and additional arguments accounted for book name.
+		//Only search argument will be not accepted for searching a book.
+		nameOfBook := ""
+		for i := 2; i < len(os.Args); i++ {
+			nameOfBook += os.Args[i]
+			if i != len(os.Args)-1 { //condition to eliminate adding space after final word
+				nameOfBook += " "
+			}
+		}
+		search(nameOfBook, ListofBooks.AllBooks)
+	} else {
+		fmt.Println("You have written an invalid argument.")
 	}
 }
 
@@ -62,4 +91,28 @@ func (b *Book) setAllProperties(ID int, Details []interface{}) Book {
 func (b *BookList) AddBook(newBook Book) []Book {
 	b.AllBooks = append(b.AllBooks, newBook)
 	return b.AllBooks
+}
+
+//list shows the whole booklist.
+func list(List []Book) {
+	for i := 0; i < len(List); i++ {
+		fmt.Println(List[i].bookName)
+	}
+}
+
+//search takes a specific book name and the booklist, and searches whether the book which is asked is available in the booklist or not.
+func search(nameOfBook string, List []Book) {
+	bookFound := false
+	nameOfBook = strings.ToLower(nameOfBook)
+	for i := 0; i < len(List); i++ {
+		book := List[i].bookName
+		lowerCaseBook := strings.ToLower(book)
+		if strings.Contains(lowerCaseBook, nameOfBook) {
+			bookFound = true
+			fmt.Println(List[i].bookName)
+		}
+	}
+	if !bookFound {
+		fmt.Println("There is no such a book in the booklist.")
+	}
 }
