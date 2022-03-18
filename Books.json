@@ -1,0 +1,142 @@
+[
+ {
+  "ID": 1,
+  "bookName": "Crime and Punishment",
+  "numOfPages": 705,
+  "numOfBooksinStock": 30,
+  "price": 30,
+  "stockCode": "BOOK1111",
+  "ISBN": "9780393055344",
+  "Writer": {
+   "WriterID": 1,
+   "WriterName": "Fyodor Dostoyevski"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 2,
+  "bookName": "War and Peace",
+  "numOfPages": 1225,
+  "numOfBooksinStock": 10,
+  "price": 50,
+  "stockCode": "BOOK1112",
+  "ISBN": "9780060798871",
+  "Writer": {
+   "WriterID": 2,
+   "WriterName": "Lev Tolstoy"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 3,
+  "bookName": "Anna Karenina",
+  "numOfPages": 864,
+  "numOfBooksinStock": 3,
+  "price": 40,
+  "stockCode": "BOOK1113",
+  "ISBN": "9780670894789",
+  "Writer": {
+   "WriterID": 2,
+   "WriterName": "Lev Tolstoy"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 4,
+  "bookName": "A Tale of Two Cities",
+  "numOfPages": 500,
+  "numOfBooksinStock": 15,
+  "price": 25,
+  "stockCode": "BOOK1114",
+  "ISBN": "9780721407104",
+  "Writer": {
+   "WriterID": 3,
+   "WriterName": "Charles Dickens"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 5,
+  "bookName": "Meditations",
+  "numOfPages": 304,
+  "numOfBooksinStock": 40,
+  "price": 20,
+  "stockCode": "BOOK1115",
+  "ISBN": "9780915145782",
+  "Writer": {
+   "WriterID": 4,
+   "WriterName": "Marcus Aurelius"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 6,
+  "bookName": "Robinson Crusoe",
+  "numOfPages": 210,
+  "numOfBooksinStock": 50,
+  "price": 18,
+  "stockCode": "BOOK1116",
+  "ISBN": "9780393044072",
+  "Writer": {
+   "WriterID": 5,
+   "WriterName": "Daniel Defoe"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 7,
+  "bookName": "The Gambler",
+  "numOfPages": 191,
+  "numOfBooksinStock": 13,
+  "price": 17,
+  "stockCode": "BOOK1117",
+  "ISBN": "9788426120113",
+  "Writer": {
+   "WriterID": 1,
+   "WriterName": "Fyodor Dostoyevski"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 8,
+  "bookName": "Fathers and Sons",
+  "numOfPages": 320,
+  "numOfBooksinStock": 34,
+  "price": 21,
+  "stockCode": "BOOK1118",
+  "ISBN": "9788423919307",
+  "Writer": {
+   "WriterID": 6,
+   "WriterName": "Ivan Turgenyev"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 9,
+  "bookName": "Don Quixote",
+  "numOfPages": 289,
+  "numOfBooksinStock": 12,
+  "price": 20,
+  "stockCode": "BOOK1119",
+  "ISBN": "9788497403573",
+  "Writer": {
+   "WriterID": 7,
+   "WriterName": "Miguel de Cervantes"
+  },
+  "isDeleted": false
+ },
+ {
+  "ID": 10,
+  "bookName": "Romeo and Juliet",
+  "numOfPages": 133,
+  "numOfBooksinStock": 15,
+  "price": 15,
+  "stockCode": "BOOK1120",
+  "ISBN": "9780003252453",
+  "Writer": {
+   "WriterID": 8,
+   "WriterName": "William Shakespeare"
+  },
+  "isDeleted": false
+ }
+]
